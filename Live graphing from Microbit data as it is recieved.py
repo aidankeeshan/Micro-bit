@@ -19,8 +19,8 @@ ax1 = fig.add_subplot(1,1,1)
 ser = serial.Serial()
 
 
-xTadhg = [0]
-yTadhg = [0]
+xPerson1 = [0]
+yPerson1 = [0]
 
 xDonnach = [0,]
 yDonnach = [0,]
