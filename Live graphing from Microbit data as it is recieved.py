@@ -22,8 +22,8 @@ ser = serial.Serial()
 xPerson1 = [0]
 yPerson1 = [0]
 
-xDonnach = [0,]
-yDonnach = [0,]
+xPerson2 = [0,]
+yPerson2 = [0,]
 
 def microbitreader():
 
@@ -31,8 +31,8 @@ def microbitreader():
     ser.baudrate = 115200
     ser.port = "COM16"
     ser.open()
-    xAxisTadhg = 0
-    xAxisDonnach = 0
+    xAxisPerson1 = 0
+    xAxisPerson2 = 0
    
     while True:
 # Read in a line from the Microbit, store it in variable 'microbitdata' as a string
@@ -48,23 +48,23 @@ def microbitreader():
         name = data[:space]
         steps = data[space+1:]
         
-        if name == "Tadhg":
-            xAxisTadhg += 1
-            xTadhg.append(xAxisTadhg)
-            yTadhg.append(float(steps))
+        if name == "Person1":
+            xAxisPerson1 += 1
+            xPerson1.append(xAxisPerson1)
+            yPerson1.append(float(steps))
             
-        elif name == "Donnach":
-            xAxisDonnach +=1
-            xDonnach.append(xAxisDonnach)
-            yDonnach.append(float(steps))
+        elif name == "Person2":
+            xAxisPerson2 +=1
+            xPerson2.append(xAxisPerson2)
+            yPerson2.append(float(steps))
         #print (steps)          
 
         
 #defines how the graph will be plotted. Picking points from both the x and y list to plot against eachother  
 def animate(i): 
     ax1.clear()
-    ax1.plot(xTadhg, yTadhg)
-    ax1.plot(xDonnach, yDonnach)    
+    ax1.plot(xPerson1, yPerson1)
+    ax1.plot(xPerson2, yPerson2)    
 
    
  
